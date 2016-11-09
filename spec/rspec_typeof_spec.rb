@@ -10,7 +10,11 @@ describe RspecTypeof do
     expect('string').to typeof(:false_or_string_or_fixnum)
   end
 
+  it 'matches boolean as true or false' do
+    expect(true).to typeof(:fixnum_or_boolean)
+  end
+
   it 'negotiates any types of unexpected types list' do
-    expect("test").to_not typeof(:fixnum_or_hash)
+    expect("test").to_not typeof(:fixnum_or_hash_or_boolean)
   end
 end
