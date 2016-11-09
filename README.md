@@ -1,6 +1,7 @@
 # RspecTypeof
+[![Build Status](https://travis-ci.org/Somiel/rspec_typeof.svg?branch=master)](https://travis-ci.org/Somiel/rspec_typeof)
 
-Welcome to rspec_typeof, with this gem you can use "typeof" expectation to your tests
+Welcome to rspec_typeof, with this gem you can use "typeof" expectation to your tests for comfortable data format matching
 
 
 ## Installation
@@ -15,11 +16,15 @@ And then execute:
 
     $ bundle
 
-## Usage
+## Usage examples
 
 
 ```ruby
 expect(true).to typeof(:string_or_nil_or_true)
+```
+### Or
+```ruby
+expect(true).to typeof(:nil_or_boolean)
 ```
 
 ## Contributing

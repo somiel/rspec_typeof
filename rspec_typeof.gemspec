@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Vovchuk Max"]
   spec.email         = ["vovchuk.max@gmail.com"]
 
-  spec.summary       = %q{Add be_typeof to Rspec}
-  spec.description   = %q{Add be_typeof to Rspec}
+  spec.summary       = %q{Add typeof matcher to Rspec}
+  spec.description   = %q{Add typeof matcher to Rspec}
   spec.homepage      = "https://github.com/Somiel/rspec_typeof"
 
 
