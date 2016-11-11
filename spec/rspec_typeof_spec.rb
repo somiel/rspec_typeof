@@ -5,6 +5,10 @@ describe RspecTypeof do
     expect(RspecTypeof::VERSION).not_to be nil
   end
 
+  it 'matches single data type' do
+    expect(true).to typeof(:true)
+  end
+
   it 'mathes any types of expected types list' do
     expect(false).to typeof(:nil_or_false_or_string)
     expect('string').to typeof(:false_or_string_or_fixnum)
@@ -24,5 +28,9 @@ describe RspecTypeof do
 
   it 'negotiates array of any types of unexpected types list' do
     expect([nil, 'test', {}]).to_not typeof(:array_of_fixnum_or_boolean)
+  end
+
+  it 'negotiates when actual value is not an array' do
+    expect(false).to_not typeof(:array_of_fixnum_or_boolean)
   end
 end

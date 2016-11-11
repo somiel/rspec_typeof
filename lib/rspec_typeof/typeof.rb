@@ -20,6 +20,8 @@ RSpec::Matchers.define :typeof do |expected_types|
   match do |actual|
     expect(actual).to satisfy do |x|
       if expected_types.to_s.scan(/^array_of_\w+/).length > 0
+        return false unless x.is_a? Array
+
         x.all? { |el|  types.include?(el.class.name) }
       else
         types.include?(x.class.name)
