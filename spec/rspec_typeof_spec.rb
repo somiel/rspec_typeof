@@ -15,6 +15,14 @@ describe RspecTypeof do
   end
 
   it 'negotiates any types of unexpected types list' do
-    expect("test").to_not typeof(:fixnum_or_hash_or_boolean)
+    expect('test').to_not typeof(:fixnum_or_hash_or_boolean)
+  end
+
+  it 'mathes array of any types of expected types list' do
+    expect([false, 'string']).to typeof(:array_of_nil_or_false_or_string)
+  end
+
+  it 'negotiates array of any types of unexpected types list' do
+    expect([nil, 'test', {}]).to_not typeof(:array_of_fixnum_or_boolean)
   end
 end
