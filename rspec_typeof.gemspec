@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Add typeof matcher to Rspec}
   spec.homepage      = "https://github.com/Somiel/rspec_typeof"
 
-
+  spec.licenses      = ['MIT']
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }

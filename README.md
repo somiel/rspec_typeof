@@ -21,10 +21,18 @@ And then execute:
 
 ```ruby
 expect(true).to typeof(:string_or_nil_or_true)
-```
-### Or
-```ruby
-expect(true).to typeof(:nil_or_boolean)
+
+expect({ string: 'string', fixnum: 2, hash: {}, array: [], custom_class: CustomClass}).to match(
+  string:       typeof(:string_or_nil),
+  fixnum:       typeof(:fixnum_or_nil),
+  hash:         typeof(:hash_or_nil_or_string),
+  array:        typeof(:array_class_or_nil),
+  custom_class: typeof(:custom_class_or_nil_or_array)
+)
+
+expect(['a', 'b', 'c']).to typeof(:array_of_string)
+
+expect(['a', 'b', 1]).to typeof(:array_of_string_or_fixnum)
 ```
 
 ## Contributing
