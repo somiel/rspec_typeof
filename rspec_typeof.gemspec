@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Vovchuk Max"]
   spec.email         = ["vovchuk.max@gmail.com"]
 
-  spec.summary       = %q{Add typeof matcher to Rspec}
-  spec.description   = %q{Add typeof matcher to Rspec}
+  spec.summary       = %q{Add typeof data type matcher to RSpec}
+  spec.description   = %q{This gem provides comfortable using of data types mathching in your RSpec tests}
   spec.homepage      = "https://github.com/Somiel/rspec_typeof"
 
   spec.licenses      = ['MIT']

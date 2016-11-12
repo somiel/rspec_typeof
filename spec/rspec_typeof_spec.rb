@@ -15,7 +15,15 @@ describe RspecTypeof do
   end
 
   it 'matches boolean as true or false' do
-    expect(true).to typeof(:fixnum_or_boolean)
+    expect(true).to typeof(:boolean)
+  end
+
+  it 'mathes hashes with expected data types' do
+    expect({ 'string' => 'str', 'boolean' => true, 'number' => 2}).to match(
+      'string'  => typeof(:string_or_nil),
+      'boolean' => typeof(:boolean),
+      'number'  => typeof(:fixnum)
+    )
   end
 
   it 'negotiates any types of unexpected types list' do
