@@ -1,6 +1,8 @@
 require "rspec"
 
 RSpec::Matchers.define :typeof do |expected_types|
+  extend RspecTypeof::Helpers
+
   matching_map = {
     'nil'     => 'NilClass',
     'false'   => 'FalseClass',
@@ -12,8 +14,7 @@ RSpec::Matchers.define :typeof do |expected_types|
     .to_s
     .gsub(/^array_of_/, '')
     .split('_or_')
-    .uniq
-    .map{ |v| matching_map.include?(v) ? matching_map[v] : v.camelize }
+    .map{ |v| matching_map.include?(v) ? matching_map[v] : camelcase(v) }
     .flatten
     .uniq
 
