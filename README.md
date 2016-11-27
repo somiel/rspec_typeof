@@ -1,7 +1,7 @@
 # RspecTypeof
 [![Gem Version](https://badge.fury.io/rb/rspec_typeof.svg)](https://badge.fury.io/rb/rspec_typeof)
 [![CodeClimate](https://codeclimate.com/github/Somiel/rspec_typeof/badges/gpa.svg)](https://codeclimate.com/github/Somiel/rspec_typeof)
-[![Build Status](https://travis-ci.org/Somiel/rspec_typeof.svg?branch=master)](https://travis-ci.org/Somiel/rspec_typeof)
+[![Build Status](https://travis-ci.org/somiel/rspec_typeof.svg?branch=master)](https://travis-ci.org/somiel/rspec_typeof)
 
 Welcome to rspec_typeof, with this gem you can use "typeof" expectation in your tests for comfortable data format matching of both single data examples and data collections
 
