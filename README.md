@@ -3,7 +3,7 @@
 [![CodeClimate](https://codeclimate.com/github/Somiel/rspec_typeof/badges/gpa.svg)](https://codeclimate.com/github/Somiel/rspec_typeof)
 [![Build Status](https://travis-ci.org/somiel/rspec_typeof.svg?branch=master)](https://travis-ci.org/somiel/rspec_typeof)
 
-Welcome to rspec_typeof, with this gem you can use "typeof" expectation in your tests for comfortable data format matching of both single data examples and data collections
+Welcome to rspec_typeof, with this gem you can use "typeof" or "type_of" expectation in your tests for comfortable data format matching of both single data examples and data collections
 
 
 ## Installation
@@ -22,7 +22,7 @@ And then execute:
 
 
 ```ruby
-expect(true).to typeof(:true)
+expect(true).to typeof(:true) or expect(true).to type_of(:true)
 
 expect(true).to typeof(:string_or_nil_or_true)
 
@@ -36,7 +36,9 @@ expect({string: 'string', fixnum: 2, hash: {}, array: [], custom_class: CustomCl
 
 expect(['a', 'b', 'c']).to typeof(:array_of_string)
 
-expect(['a', 'b', 1]).to typeof(:array_of_string_or_fixnum)
+expect(['a', 'b', 1]).to typeof(:array_of_string_or_integer)
+
+expect(1).to typeof(:numeric)
 ```
 
 ## Contributing

@@ -7,7 +7,9 @@ RSpec::Matchers.define :typeof do |expected_types|
     'nil'     => 'NilClass',
     'false'   => 'FalseClass',
     'true'    => 'TrueClass',
-    'boolean' => ['TrueClass', 'FalseClass']
+    'boolean' => ['TrueClass', 'FalseClass'],
+    'integer' => ['Fixnum', 'Bignum'],
+    'numeric' => ['Fixnum', 'Bignum', 'Float', 'Rational', 'BigDecimal']
   }.freeze
 
   types = expected_types
@@ -22,7 +24,7 @@ RSpec::Matchers.define :typeof do |expected_types|
     expect(actual).to satisfy do |x|
       if expected_types.to_s.scan(/^array_of_\w+/).length > 0
         return false unless x.is_a? Array
-
+        
         x.all? { |el|  types.include?(el.class.name) }
       else
         types.include?(x.class.name)
@@ -34,3 +36,5 @@ RSpec::Matchers.define :typeof do |expected_types|
     "expected that #{actual} would be an instance of #{types.join(' or ')}"
   end
 end
+
+RSpec::Matchers.alias_matcher :type_of, :typeof
